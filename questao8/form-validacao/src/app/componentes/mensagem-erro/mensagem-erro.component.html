@@ -1,0 +1,12 @@
+@if(control.errors && control.touched) {
+    @if(control.errors['required']) {
+        <div class="mensagem-erro text-danger"> campo obrigatório</div>
+    }
+    @if(control.errors['email']) {
+        <div class="mensagem-erro text-danger"> formato de email inválido</div>
+    }
+    @if(control.errors['dataFutura']) {
+        <div class="mensagem-erro text-danger"> a data tem que ser menor que a data atual</div>
+    }
+
+}

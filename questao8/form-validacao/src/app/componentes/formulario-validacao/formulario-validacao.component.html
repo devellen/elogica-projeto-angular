@@ -1,0 +1,36 @@
+<section>
+    <form [formGroup]="contatoForm">
+        <div class="p-3 d-flex flex-column gap-4">
+            <h3>Suas Informações</h3>
+
+            <div>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" class="form-control" placeholder="Ellen Patricia" formControlName="nome">
+                <app-mensagem-erro [control]="obterControle('nome')"></app-mensagem-erro>
+            </div>
+
+            <div>
+                <label for="">Email</label>
+                <input type="text" class="form-control" placeholder="ellen@gmail.com" id="email"
+                    formControlName="email">
+                <app-mensagem-erro [control]="obterControle('email')"></app-mensagem-erro>
+            </div>
+
+            <div>
+                <label for="">Telefone</label>
+                <input type="tel" class="form-control" placeholder="(81) 98699-9999" mask="(00) 0 0000-0000" id="telefone" formControlName="telefone">
+                <app-mensagem-erro [control]="obterControle('telefone')"></app-mensagem-erro>
+            </div>
+
+            <div>
+                <label for="aniversario">Aniversário</label>
+                <input type="date" class="form-control" id="aniversario" formControlName="aniversario" id="aniversario"/>
+                <app-mensagem-erro [control]="obterControle('aniversario')"></app-mensagem-erro>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Salvar Contato
+            </button>
+        </div>
+    </form>
+</section>
