@@ -1,4 +1,5 @@
 <section class="p-4 bg-info vh-100">
+  @if (exibeForm) {
   <form action="">
     <div class="row bg-light rounded shadow-lg w-75 mx-auto mt-5">
       <div class="col-6 p-0">
@@ -32,7 +33,10 @@
 
         <div class="row">
           <div class="col-6">
-            <label for="exampleDataList" class="form-label" class="text-body-secondary fw-bold"
+            <label
+              for="exampleDataList"
+              class="form-label"
+              class="text-body-secondary fw-bold"
               >Estado</label
             >
             <select
@@ -46,7 +50,10 @@
           </div>
 
           <div class="col-6">
-            <label for="exampleDataList" class="form-label" class="text-body-secondary fw-bold"
+            <label
+              for="exampleDataList"
+              class="form-label"
+              class="text-body-secondary fw-bold"
               >Cidade</label
             >
             <select
@@ -69,13 +76,23 @@
             formControlName="instituicao"
           />
         </div>
-
         <div class="d-flex justify-content-center p-4">
-          <button class="btn btn-success rounded-pill fw-bold" type="submit">
+          <button
+            (click)="destruir()"
+            class="btn btn-success rounded-pill fw-bold"
+            type="submit"
+          >
             Continuar
           </button>
         </div>
       </div>
     </div>
   </form>
+  }
+
+  @if (exibeMensagem) {
+    <div class="row bg-light rounded shadow-lg w-75 h-50 mx-auto mt-5">
+      <h1 class="text-center text-danger d-flex justify-content-center align-items-center">Formulário destruído!!!</h1>
+    </div>
+  }
 </section>

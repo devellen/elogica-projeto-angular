@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-formulario-hook',
@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './formulario-hook.component.html',
   styleUrl: './formulario-hook.component.css'
 })
-export class FormularioHookComponent {
+export class FormularioHookComponent implements OnDestroy {
+  exibeForm: boolean = true;
+  exibeMensagem: boolean = false;
+  destruir() {
+    this.exibeForm = false;
+    this.exibeMensagem = true;
 
+  }
+  ngOnDestroy(): void {
+    this.destruir();
+  }
 }
