@@ -1,0 +1,37 @@
+<form [formGroup]="contatoForm" (ngSubmit)="salvarContato()" class="p-4">
+  <label for="nome" class="text-body-secondary fw-bold">Nome</label>
+  <input
+    type="text"
+    id="nome"
+    class="form-control rounded-pill border-secondary-subtle border-2"
+    formControlName="nome"
+  />
+  <label
+    for="exampleDataList"
+    class="form-label text-body-secondary fw-bold"
+    >Status</label
+  >
+  <select
+    class="form-select rounded-pill border-secondary-subtle border-2"
+    id="status" formControlName="status"
+  >
+    <option value="ativo">ativo</option>
+    <option value="inativo">inativo</option>
+  </select>
+
+  <div class="d-flex justify-content-center">
+    <button
+      class="btn btn-success rounded-pill fw-bold m-4"
+      type="submit"
+    >
+      Continuar
+    </button>
+  </div>
+
+  <button
+  class="btn btn-primary fw-bold "
+  routerLink="/lista-usuarios"
+>
+  Lista de usuarios
+</button>
+</form>
