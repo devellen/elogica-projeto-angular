@@ -1,0 +1,44 @@
+{
+  "usuarios": [
+    {
+      "status": "ativo",
+      "nome": "ellen",
+      "id": 1
+    },
+    {
+      "nome": "",
+      "status": "",
+      "id": 2
+    },
+    {
+      "nome": null,
+      "status": null,
+      "id": 3
+    },
+    {
+      "nome": null,
+      "status": null,
+      "id": 4
+    },
+    {
+      "nome": "patricia",
+      "status": "ativo",
+      "id": 5
+    },
+    {
+      "nome": "elton",
+      "status": "inativo",
+      "id": 6
+    },
+    {
+      "nome": "pati",
+      "status": "inativo",
+      "id": 7
+    },
+    {
+      "nome": "vanessa",
+      "status": "inativo",
+      "id": 8
+    }
+  ]
+}
