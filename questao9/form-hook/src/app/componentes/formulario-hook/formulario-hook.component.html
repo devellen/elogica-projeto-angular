@@ -1,0 +1,81 @@
+<section class="p-4 bg-info vh-100">
+  <form action="">
+    <div class="row bg-light rounded shadow-lg w-75 mx-auto mt-5">
+      <div class="col-6 p-0">
+        <img class="w-100 rounded-start" src="assets/saturno.avif" alt="" />
+      </div>
+
+      <div class="col-6 d-flex flex-column justify-content-center">
+        <h3 class="text-center text-danger fs-4 mb-5">INSCRIÇÃO</h3>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="nome" class="text-body-secondary fw-bold">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              class="form-control rounded-pill border-secondary-subtle border-2"
+              formControlName="nome"
+            />
+          </div>
+
+          <div class="col-6">
+            <label for="" class="text-body-secondary fw-bold">Email</label>
+            <input
+              type="text"
+              class="form-control rounded-pill border-secondary-subtle border-2"
+              id="email"
+              formControlName="email"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="exampleDataList" class="form-label" class="text-body-secondary fw-bold"
+              >Estado</label
+            >
+            <select
+              class="form-select rounded-pill border-secondary-subtle border-2"
+              id="tipoTransacao"
+            >
+              <option selected value="Compra"></option>
+              <option value="Venda">PE</option>
+              <option value="Venda">PB</option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="exampleDataList" class="form-label" class="text-body-secondary fw-bold"
+              >Cidade</label
+            >
+            <select
+              class="form-select rounded-pill border-secondary-subtle border-2"
+              id="tipoTransacao"
+            >
+              <option selected value="Compra"></option>
+              <option value="Venda">Camaragibe</option>
+              <option value="Venda">Recife</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="" class="text-body-secondary fw-bold">Instituição</label>
+          <input
+            type="text"
+            class="form-control rounded-pill border border-secondary-subtle border-2"
+            id="instituicao"
+            formControlName="instituicao"
+          />
+        </div>
+
+        <div class="d-flex justify-content-center p-4">
+          <button class="btn btn-success rounded-pill fw-bold" type="submit">
+            Continuar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
