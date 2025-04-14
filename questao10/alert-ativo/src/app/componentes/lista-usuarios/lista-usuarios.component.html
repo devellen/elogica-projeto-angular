@@ -1,15 +1,15 @@
-@for (item of usuarios; track item) {
-  @if (item.status == "ativo") {
-    <div class="alert alert-primary" role="alert">
-        Usuario {{ item.nome }} está {{ item.status }}
-    </div>
-  }
-  @if (item.status == "inativo") {
-    <div class="alert alert-danger" role="alert">
-      Usuario {{ item.nome }} está {{ item.status }}
-    </div>
-  }
+@for (item of usuarios; track item) { @if (item.status == "ativo") {
+<div class="alert alert-primary" role="alert">
+  Usuario {{ item.nome }} está {{ item.status }}
+</div>
+} @if (item.status == "inativo") {
+<div class="alert alert-danger" role="alert">
+  Usuario {{ item.nome }} está {{ item.status }}
+</div>
+} }
 
-}
-
-
+<div>
+  <button class="btn btn-primary fw-bold" routerLink="/formulario">
+    Voltar
+  </button>
+</div>

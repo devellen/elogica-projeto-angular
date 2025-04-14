@@ -39,6 +39,11 @@
       "nome": "vanessa",
       "status": "inativo",
       "id": 8
+    },
+    {
+      "nome": "igor",
+      "status": "ativo",
+      "id": 9
     }
   ]
 }

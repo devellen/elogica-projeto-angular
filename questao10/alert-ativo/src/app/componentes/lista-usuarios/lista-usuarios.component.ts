@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuario } from '../usuario';
 import { UsuarioServiceService } from '../../services/usuario-service.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-lista-usuarios',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './lista-usuarios.component.html',
   styleUrl: './lista-usuarios.component.css'
 })
