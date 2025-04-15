@@ -70,5 +70,42 @@ namespace APImemoteca.Infra.Repositories
             }
             catch (Exception e) { throw e; }
         }
+
+        public async Task<bool> ApagarQuote(int id)
+        {
+            try
+            {
+                string sql = $"DELETE FROM REGISTRO_PENSAMENTO WHERE ID = {id}";
+                var res = await _connection.ExecuteAsync(sql);
+                return res > 0 ? true : false;
+            }
+            catch (Exception e) { throw e; }
+        }
+
+        public async Task<RetornoPaginado<Quote>> RetornoPaginadoQuote(int pagina, int quantidade)
+        {
+            try
+            {
+                string sql = $"SELECT * FROM REGISTRO_PENSAMENTO ORDER BY ID OFFSET @OFFSET ROWS FETCH NEXT @FETCHNEXT ROWS ONLY";
+                var parametros = new
+                {
+                    OFFSET = (pagina - 1) * quantidade,
+                    FETCHNEXT = quantidade
+                };
+                var quotes = await _connection.QueryAsync<Quote>(sql, parametros);
+
+                string sqlQtdQuote = $"SELECT COUNT(*) FROM REGISTRO_PENSAMENTO";
+                var qtdQuotes = await _connection.QueryFirstOrDefaultAsync<int>(sqlQtdQuote);
+
+                return new RetornoPaginado<Quote>
+                {
+                    Pagina = pagina,
+                    QtdPagina = quantidade,
+                    TotalRegistros = qtdQuotes,
+                    Listagem = quotes.ToList()
+                };
+            }
+            catch (Exception e) { throw e; }
+        } 
     }
 }

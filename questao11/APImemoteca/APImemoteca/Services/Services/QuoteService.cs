@@ -60,5 +60,29 @@ namespace APImemoteca.Services.Services
                 throw;
             }
         }
+
+        public async Task<bool> ApagarQuote(int id)
+        {
+            try
+            {
+                return await _repository.ApagarQuote(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<RetornoPaginado<Quote>> RetornoPaginadoQuote(int pagina, int quantidade)
+        {
+            try
+            {
+                return await _repository.RetornoPaginadoQuote(pagina, quantidade);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

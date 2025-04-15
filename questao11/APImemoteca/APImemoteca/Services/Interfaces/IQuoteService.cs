@@ -8,5 +8,7 @@ namespace APImemoteca.Services.Interfaces
         Task<Quote> ListarQuotePorId(int id);
         Task<bool> AdicionarQuote(Quote quote);
         Task<bool> AtualizarQuote(Quote quote);
+        Task<bool> ApagarQuote(int id);
+        Task<RetornoPaginado<Quote>> RetornoPaginadoQuote(int pagina, int quantidade);
     }
 }
