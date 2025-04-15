@@ -36,5 +36,17 @@ namespace APImemoteca.Services.Services
                 throw;
             }
         }
+
+        public async Task<Quote> ListarQuotePorId(int id)
+        {
+            try
+            {
+                return await _repository.ListarQuotePorId(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

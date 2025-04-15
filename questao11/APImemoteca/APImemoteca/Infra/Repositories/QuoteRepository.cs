@@ -25,6 +25,17 @@ namespace APImemoteca.Infra.Repositories
             catch (Exception e) { throw e; }
         }
 
+        public async Task<Quote> ListarQuotePorId(int id)
+        {
+            try
+            {
+                string sql = $"SELECT * FROM REGISTRO_PENSAMENTO WHERE ID = {id}";
+                var quote = await _connection.QueryFirstOrDefaultAsync<Quote>(sql);
+                return quote; 
+            }
+            catch (Exception e) { throw e; }
+        }
+
         public async Task<bool> AdicionarQuote(Quote quote)
         {
             try

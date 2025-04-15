@@ -31,6 +31,18 @@ namespace APImemoteca.Controllers
             catch (Exception e) { return BadRequest(e.Message); }
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ListarQuotePorId(int id)
+        {
+            try
+            {
+                var quote = await _service.ListarQuotePorId(id);
+                if (quote == null) return NotFound("pensamento não encontrado");
+                return Ok(quote);
+            }
+            catch (Exception e) { return BadRequest(e.Message); }
+        }
+
         [HttpPost]
         public async Task<IActionResult> AdicionarQuote([FromBody] QuoteDto quoteDto)
         {
