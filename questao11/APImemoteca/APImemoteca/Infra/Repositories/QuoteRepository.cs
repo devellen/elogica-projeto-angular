@@ -24,5 +24,22 @@ namespace APImemoteca.Infra.Repositories
             }
             catch (Exception e) { throw e; }
         }
+
+        public async Task<bool> AdicionarQuote(Quote quote)
+        {
+            try
+            {
+                string sql = $"INSERT INTO REGISTRO_PENSAMENTO VALUES (@PENSAMENTO, @MODELO, @AUTOR)";
+                var param = new
+                {
+                    PENSAMENTO = quote.Pensamento,
+                    MODELO = quote.Modelo,
+                    AUTOR = quote.Autor
+                };
+                var res = await _connection.ExecuteAsync(sql, param);
+                return res > 0 ? true : false;
+            }
+            catch (Exception e) { throw e; }
+        }
     }
 }
