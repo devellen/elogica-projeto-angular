@@ -48,5 +48,17 @@ namespace APImemoteca.Services.Services
                 throw;
             }
         }
+
+        public async Task<bool> AtualizarQuote(Quote quote)
+        {
+            try
+            {
+                return await _repository.AtualizarQuote(quote);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

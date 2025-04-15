@@ -52,5 +52,23 @@ namespace APImemoteca.Infra.Repositories
             }
             catch (Exception e) { throw e; }
         }
+
+        public async Task<bool> AtualizarQuote(Quote quote)
+        {
+            try
+            {
+                string sql = $"UPDATE REGISTRO_PENSAMENTO SET PENSAMENTO = @PENSAMENTO, MODELO = @MODELO, AUTOR = @AUTOR WHERE ID = @ID";
+                var param = new
+                {
+                    PENSAMENTO = quote.Pensamento,
+                    MODELO = quote.Modelo,
+                    AUTOR = quote.Autor,
+                    ID = quote.Id
+                };
+                var res = await _connection.ExecuteAsync(sql, param);
+                return res > 0 ? true : false;
+            }
+            catch (Exception e) { throw e; }
+        }
     }
 }

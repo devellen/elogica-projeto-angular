@@ -55,5 +55,19 @@ namespace APImemoteca.Controllers
             }
             catch (Exception e) { return BadRequest(e.Message); }
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> AtualizarQuote(int id, [FromBody]  QuoteDto quoteDto)
+        {
+            try
+            {
+                var quote = _mapper.Map<Quote>(quoteDto);
+                quote.Id = id;
+                var res = await _service.AtualizarQuote(quote);
+                if (res) return Ok("Pensamento atualizado com sucesso!");
+                return BadRequest("Erro inesperado ao atualizar pensamento!");
+            }
+            catch (Exception e) { return BadRequest(e.Message); }
+        }
     }
 }
