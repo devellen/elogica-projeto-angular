@@ -1,0 +1,8 @@
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\LENOVO\Documents\alura\projeto angular\questao11\APImemoteca\APImemoteca\obj\Debug\net8.0\APImemoteca.sourcelink.json

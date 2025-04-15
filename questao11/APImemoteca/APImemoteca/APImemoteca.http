@@ -1,0 +1,6 @@
+@APImemoteca_HostAddress = http://localhost:5126
+
+GET {{APImemoteca_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
