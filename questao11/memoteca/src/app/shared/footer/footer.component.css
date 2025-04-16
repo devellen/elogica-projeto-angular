@@ -1,7 +1,8 @@
 .footer {
   background-image: url("/assets/fundo-rodape.png");
+
 }
 
-.img {
-  margin-right: 50vw;
+.text {
+  width: 42vw;
 }
