@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../../shared/header/header.component";
-import { FooterComponent } from "../../shared/footer/footer.component";
-import { CardComponent } from "../../shared/card/card.component";
+import { HeaderComponent } from '../../shared/components/header/header.component';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { CardComponent } from '../../shared/components/card/card.component';
 
 @Component({
   selector: 'app-form',
