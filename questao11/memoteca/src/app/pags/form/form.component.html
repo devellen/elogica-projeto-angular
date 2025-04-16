@@ -1,1 +1,58 @@
-<p>form works!</p>
+<app-header></app-header>
+<section class="section p-5">
+  <h4 class="text-primary-emphasis text-center">Adicione um novo pensamento:</h4>
+  <div class="p-5 rounded shadow-lg bg-form m-5">
+    <form action="" class="w-100">
+      <label for="pensamento" class="text-primary-emphasis fw-bold"
+        >Pensamento</label
+      >
+      <textarea
+        class="form-control"
+        id="pensamento"
+        formControlName="pensamento"
+        placeholder="Digite seu pensamento"
+      ></textarea>
+
+      <label for="autor" class="text-primary-emphasis fw-bold">Autor(a) ou Fonte</label>
+      <input
+        type="text"
+        id="autor"
+        class="form-control"
+        formControlName="autor"
+        placeholder="Digite o nome do autor ou fonte"
+      />
+
+      <label for="" class="text-primary-emphasis fw-bold">Selecione o modelo do card</label>
+      <div class="d-flex flex-column flex-md-row justify-content-between ">
+
+        <div >
+          <span class="d-flex align-items-center gap-2 mb-2 "><input class="form-check-input" type="radio" name="group-model" value="1" >Modelo 1</span>
+          <app-card [modelo]="1"></app-card>
+        </div>
+
+        <div>
+          <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" name="group-model" value="2" >Modelo 2</span>
+          <app-card [modelo]="2"></app-card>
+        </div>
+
+        <div>
+          <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" name="group-model" value="3" >Modelo 3</span>
+          <app-card [modelo]="3"></app-card>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center pt-5">
+        <button
+          class=" btn btn-primary w-25 rounded m-4"
+          type="submit">
+          Salvar
+        </button>
+        <button
+        class="btn btn-primary rounded w-25 m-4">
+        Cancelar
+      </button>
+      </div>
+    </form>
+  </div>
+</section>
+<app-footer></app-footer>
