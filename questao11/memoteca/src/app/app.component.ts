@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormComponent } from "./pags/form/form.component";
-import { MuralComponent } from "./pags/mural/mural.component";
+
 
 @Component({
   selector: 'app-root',
