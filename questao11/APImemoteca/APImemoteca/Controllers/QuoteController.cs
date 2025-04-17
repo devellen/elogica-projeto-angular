@@ -50,7 +50,7 @@ namespace APImemoteca.Controllers
             {
                 var quote = _mapper.Map<Quote>(quoteDto);
                 var res = await _service.AdicionarQuote(quote);
-                if (res) return Ok("Pensamento inserido com sucesso!");
+                if(res) return Created("/quotes", new { mensagem = "Pensamento cadastrado com sucesso!" });
                 return BadRequest("Erro inesperado ao inserir pensamento!");
             }
             catch (Exception e) { return BadRequest(e.Message); }
