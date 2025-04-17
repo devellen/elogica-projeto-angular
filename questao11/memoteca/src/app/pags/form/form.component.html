@@ -2,7 +2,7 @@
 <section class="section p-5">
   <h4 class="text-primary-emphasis text-center">Adicione um novo pensamento:</h4>
   <div class="p-5 rounded shadow-lg bg-form m-5">
-    <form action="" class="w-100">
+    <form [formGroup]="quoteForm" (ngSubmit)="salvarQuote()" class="w-100">
       <label for="pensamento" class="text-primary-emphasis fw-bold"
         >Pensamento</label
       >
@@ -26,17 +26,17 @@
       <div class="d-flex flex-column flex-md-row justify-content-between ">
 
         <div >
-          <span class="d-flex align-items-center gap-2 mb-2 "><input class="form-check-input" type="radio" name="group-model" value="1" >Modelo 1</span>
+          <span class="d-flex align-items-center gap-2 mb-2 "><input class="form-check-input" type="radio" value="1" formControlName="modelo">Modelo 1</span>
           <app-card [telaInicial]="false" [modelo]="1"></app-card>
         </div>
 
         <div>
-          <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" name="group-model" value="2" >Modelo 2</span>
+          <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" value="2" formControlName="modelo">Modelo 2</span>
           <app-card [telaInicial]="false" [modelo]="2"></app-card>
         </div>
 
         <div>
-          <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" name="group-model" value="3" >Modelo 3</span>
+          <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" value="3" formControlName="modelo">Modelo 3</span>
           <app-card [telaInicial]="false" [modelo]="3"></app-card>
         </div>
       </div>
