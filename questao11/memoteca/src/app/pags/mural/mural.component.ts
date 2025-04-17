@@ -5,11 +5,12 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
 import { CardComponent } from "../../shared/components/card/card.component";
 import { Quote } from '../../shared/interfaces/quote';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-mural',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, CardComponent, CommonModule],
+  imports: [HeaderComponent, FooterComponent, CardComponent, CommonModule, RouterLink],
   templateUrl: './mural.component.html',
   styleUrl: './mural.component.css'
 })
@@ -21,6 +22,7 @@ export class MuralComponent implements OnInit {
   ngOnInit(): void {
     this.muralService.obterPensamentos().subscribe(listaPensamentos => {
       this.quotes = listaPensamentos;
+      console.log(this.quotes)
     })
   }
 
