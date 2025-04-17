@@ -1,41 +1,35 @@
-<div
-  class="card col-4"
-  [class]="modelo == 1 ? 'card1' : modelo == 2 ? 'card2' : 'card3'"
-  style="width: 15rem"
->
+@if(telaInicial) {
+<div class="card m-4 w-75 h-75" [class]="modelo == 1 ? 'card1' : modelo == 2 ? 'card2' : 'card3'" style="width: 15rem">
   <div class="card-body">
-    @if(telaInicial) {
-    <h1
-      class="card-title"
-      [class]="
-        modelo == 1
-          ? 'text-primary'
-          : modelo == 2
-          ? 'text-info'
-          : 'text-success'
-      "
-    >
+    <h1 class="card-title" [class]="modelo == 1 ? 'text-primary' : modelo == 2 ? 'text-info' : 'text-success'">
       <i class="bi bi-quote"></i>
     </h1>
-    } @else {
-    <h5>Previa</h5>
-    }
-    <p class="card-text">
+    <p class="card-text ">
       {{ pensamento }}
     </p>
-
-    @if(telaInicial) {
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between ">
       <div>
         <p class="text-primary-emphasis fw-bold">{{ autor }}</p>
       </div>
       <div>
-        <button class="border-0 bg-transparent"><i class="bi bi-pencil-square text-primary-emphasis"></i></button>
-        <button class="border-0 bg-transparent"><i class="bi bi-trash text-primary-emphasis"></i></button>
+        <button class="border-0 bg-transparent me-2">
+          <i class="bi bi-pencil-square text-primary-emphasis"></i>
+        </button>
+        <button class="border-0 bg-transparent">
+          <i class="bi bi-trash text-primary-emphasis"></i>
+        </button>
       </div>
     </div>
-    } @else {
-    <p class="text-primary-emphasis fw-bold">Autor da Silva Sauro</p>
-    }
   </div>
 </div>
+} @else {
+<div class="card" [class]="modelo == 1 ? 'card1' : modelo == 2 ? 'card2' : 'card3'" style="width: 15rem">
+  <div class="card-body">
+    <h5>Previa</h5>
+    <p class="card-text">
+      {{ pensamento }}
+    </p>
+    <p class="text-primary-emphasis fw-bold">Autor da Silva Sauro</p>
+  </div>
+</div>
+}
