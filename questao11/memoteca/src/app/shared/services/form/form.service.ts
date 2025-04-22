@@ -30,4 +30,9 @@ export class FormService {
     }
   }
 
+
+  excluirPensamento(id:number): Observable<Quote> {
+    const url = `${this.API}/${id}`;
+    return this.httpclient.delete<Quote>(url)
+  }
 }
