@@ -12,6 +12,7 @@
         formControlName="pensamento"
         placeholder="Digite seu pensamento"
       ></textarea>
+      <app-error-message [control]="obterControle('pensamento')"></app-error-message>
 
       <label for="autor" class="text-primary-emphasis fw-bold">Autor(a) ou Fonte</label>
       <input
@@ -21,6 +22,7 @@
         formControlName="autor"
         placeholder="Digite o nome do autor ou fonte"
       />
+      <app-error-message [control]="obterControle('autor')"></app-error-message>
 
       <label for="" class="text-primary-emphasis fw-bold">Selecione o modelo do card</label>
       <div class="d-flex flex-column flex-md-row justify-content-between ">
@@ -29,6 +31,7 @@
           <span class="d-flex align-items-center gap-2 mb-2 "><input class="form-check-input" type="radio" value="1" formControlName="modelo">Modelo 1</span>
           <app-card [telaInicial]="false" [modelo]="1"></app-card>
         </div>
+        <app-error-message [control]="obterControle('modelo')"></app-error-message>
 
         <div>
           <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" value="2" formControlName="modelo">Modelo 2</span>
@@ -44,7 +47,8 @@
       <div class="d-flex justify-content-center pt-5">
         <button
           class=" btn btn-primary w-25 rounded m-4"
-          type="submit">
+          type="submit"
+          [disabled]="quoteForm.invalid">
           Salvar
         </button>
         <button

@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { CardComponent } from '../../shared/components/card/card.component';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ErrorMessageComponent } from "../../shared/components/error-message/error-message.component";
 
 @Component({
   selector: 'app-form',
@@ -14,7 +15,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     FooterComponent,
     CardComponent,
     ReactiveFormsModule,
-  ],
+    ErrorMessageComponent
+],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
@@ -40,10 +42,16 @@ export class FormComponent implements OnInit {
 
   inicializarFormulario() {
     this.quoteForm = new FormGroup({
-      pensamento: new FormControl(''),
-      modelo: new FormControl(''),
-      autor: new FormControl(''),
+      pensamento: new FormControl('', Validators.required),
+      modelo: new FormControl('', Validators.required),
+      autor: new FormControl('', Validators.required),
     });
+  }
+
+  obterControle(nome: string): FormControl {
+    const control= this.quoteForm.get(nome);
+    if(!control) throw new Error(`controle de form não encontrado ${nome}`);
+    return control as FormControl;
   }
 
   salvarQuote() {
