@@ -76,7 +76,7 @@ namespace APImemoteca.Controllers
             try
             {
                 var res = await _service.ApagarQuote(id);
-                if (res) return Ok("pensamento apagado com sucesso");
+                if (res) return Ok(new { mensagem = "Pensamento apagado com sucesso!" });
                 return BadRequest("Erro inesperado ao apagar pensamento!");
             }
             catch (Exception e) { return BadRequest(e.Message); }
