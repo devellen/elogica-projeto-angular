@@ -20,7 +20,11 @@ export class MuralComponent implements OnInit {
 
   constructor(private muralService: MuralService) {}
   ngOnInit(): void {
-    this.muralService.obterPensamentos().subscribe(listaPensamentos => {
+    this.listaPensamentosPagina(1,9)
+  }
+
+  listaPensamentosPagina(pagina: number, quantidade: number) {
+    this.muralService.obterPensamentosPorPagina(pagina,quantidade).subscribe(listaPensamentos => {
       this.quotes = listaPensamentos;
       console.log(this.quotes)
     })

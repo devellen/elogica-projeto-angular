@@ -15,4 +15,14 @@ export class MuralService {
     return this.http.get<Quote[]>(this.API); //eniva a url
   }
 
+  obterPensamentosPorPagina(pagina: number, quantidade: number): Observable<Quote[]>{
+    const url = `${this.API}/${pagina}/${quantidade}`
+    return this.http.get<Quote[]>(url);
+  }
+
+  editarPensamento(quote: Quote): Observable<Quote> {
+    const url = `${this.API}/${quote.id}`;
+    return this.http.put<Quote>(url, quote);
+  }
+
 }

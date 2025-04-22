@@ -6,8 +6,8 @@
       <button class="btn btn-primary rounded w-25 m-4" routerLink="/formulario">Adicionar pensamento</button>
     </div>
     <div class="row mx-auto p-4">
-      @for (quote of quotes; track $index) {
-        <app-card class="col-4" [pensamento]="quote.pensamento" [modelo]="quote.modelo" [autor]="quote.autor"></app-card>
+      @for (quote of quotes; track quote.id) {
+        <app-card class="col-4" [pensamento]="quote.pensamento" [modelo]="quote.modelo" [autor]="quote.autor" [id]="quote.id"></app-card>
       }
 
     </div>

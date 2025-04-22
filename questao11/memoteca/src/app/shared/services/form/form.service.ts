@@ -16,4 +16,18 @@ export class FormService {
     return this.httpclient.post<Quote>(this.API, quote);
   }
 
+  editarPensamento(quote: Quote): Observable<Quote> {
+    const url = `${this.API}/${quote.id}`;
+    return this.httpclient.put<Quote>(url, quote)
+  }
+
+
+  editarOuSalvarPensamento(quote: Quote): Observable<Quote> {
+    if(quote.id) {
+      return this.editarPensamento(quote)
+    } else {
+      return this.salvarPensamento(quote)
+    }
+  }
+
 }

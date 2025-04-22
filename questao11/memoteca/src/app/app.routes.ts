@@ -9,13 +9,16 @@ export const routes: Routes = [
     redirectTo: '/mural',
     pathMatch: 'full', //quando lida com caminhos vazios e redirecionamento, tem q vim essa prop
   },
-
   {
     path: 'mural',
     component: MuralComponent,
   },
   {
     path: 'formulario',
+    component: FormComponent,
+  },
+  {
+    path: 'formulario/:id',
     component: FormComponent
   }
 ];

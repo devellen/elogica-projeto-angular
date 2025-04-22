@@ -12,7 +12,7 @@
         <p class="text-primary-emphasis fw-bold">{{ autor }}</p>
       </div>
       <div>
-        <button class="border-0 bg-transparent me-2">
+        <button class="border-0 bg-transparent me-2" [routerLink]="['/formulario', id]" [state]="{pensamento: pensamento, modelo: modelo, autor: autor, id: id}">
           <i class="bi bi-pencil-square text-primary-emphasis"></i>
         </button>
         <button class="border-0 bg-transparent">

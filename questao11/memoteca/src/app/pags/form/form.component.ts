@@ -9,18 +9,33 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, CardComponent, ReactiveFormsModule],
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    CardComponent,
+    ReactiveFormsModule,
+  ],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrl: './form.component.css',
 })
-export class FormComponent implements OnInit{
-
+export class FormComponent implements OnInit {
   quoteForm!: FormGroup;
 
-  constructor(private formService: FormService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private formService: FormService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.inicializarFormulario();
+    if(history.state) { //chamo o objeto aqui na hora que carrega tela pra editar
+      let pensamentoEditar = history.state;
+      delete pensamentoEditar.navigationId;
+      this.quoteForm.patchValue(pensamentoEditar);
+      this.quoteForm.get("modelo")?.setValue(pensamentoEditar.modelo.toString());
+      console.log(this.quoteForm)
+    }
   }
 
   inicializarFormulario() {
@@ -28,27 +43,23 @@ export class FormComponent implements OnInit{
       pensamento: new FormControl(''),
       modelo: new FormControl(''),
       autor: new FormControl(''),
-
-    })
+    });
   }
 
   salvarQuote() {
+
     const novoQuote = this.quoteForm.value;
-    this.formService.salvarPensamento(novoQuote).subscribe(
-      () => {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    novoQuote.id = id ? parseInt(id) : 0;
+
+    this.formService.editarOuSalvarPensamento(novoQuote).subscribe(() => {
       this.quoteForm.reset();
       this.router.navigateByUrl('/mural');
-
-            // {
-      //   next: response => {
-      //     console.log(response)
-      //   },
-      //   error: err => {console.log('erro', err)}
-      // }
-    }
-  );
-
-
+    });
   }
 
+  cancelar() {
+    this.quoteForm.reset(); //limpa o form
+    this.router.navigateByUrl('/mural')
+  }
 }
