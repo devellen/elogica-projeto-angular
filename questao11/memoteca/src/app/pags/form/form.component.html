@@ -30,8 +30,8 @@
         <div >
           <span class="d-flex align-items-center gap-2 mb-2 "><input class="form-check-input" type="radio" value="1" formControlName="modelo">Modelo 1</span>
           <app-card [telaInicial]="false" [modelo]="1"></app-card>
+          <app-error-message [control]="obterControle('modelo')"></app-error-message>
         </div>
-        <app-error-message [control]="obterControle('modelo')"></app-error-message>
 
         <div>
           <span class="d-flex align-items-center gap-2 mb-2"><input class="form-check-input" type="radio" value="2" formControlName="modelo">Modelo 2</span>
