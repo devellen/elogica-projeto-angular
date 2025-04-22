@@ -64,12 +64,12 @@ namespace APImemoteca.Controllers
                 var quote = _mapper.Map<Quote>(quoteDto);
                 quote.Id = id;
                 var res = await _service.AtualizarQuote(quote);
-                if (res) return Ok("Pensamento atualizado com sucesso!");
+                if (res) return Ok(new { mensagem = "Pensamento atualizado com sucesso!" });
                 return BadRequest("Erro inesperado ao atualizar pensamento!");
             }
             catch (Exception e) { return BadRequest(e.Message); }
         }
-
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> ApagarQuote(int id)
         {
@@ -82,13 +82,13 @@ namespace APImemoteca.Controllers
             catch (Exception e) { return BadRequest(e.Message); }
         }
 
-        [HttpGet("quote-paginado")]
-        public async Task<IActionResult> RetornoPaginadoQuote([FromQuery] int pagina, [FromQuery] int quantidade) { 
+        [HttpGet("{pagina}/{quantidade}")]
+        public async Task<IActionResult> RetornoPaginadoQuote( int pagina, int quantidade) { 
             try
             {
                 var quotePaginado = await _service.RetornoPaginadoQuote(pagina, quantidade);
                 if (quotePaginado.TotalRegistros == 0) return NotFound("pensamentos não encontrados");
-                return Ok(quotePaginado);
+                return Ok(quotePaginado.Listagem);
             }
             catch (Exception e) { return BadRequest(e.Message); }
         }
