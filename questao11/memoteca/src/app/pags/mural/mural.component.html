@@ -11,6 +11,13 @@
       }
 
     </div>
+    <nav>
+      <ul class="pagination d-flex justify-content-center p-4 m-0">
+        <li class="page-item"><a class="page-link" aria-label="Default pagination"(click)="pagina ==1 ? null :pagina=pagina-1; listaPensamentosPagina(pagina,quantidade)"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class="page-item" ><a class="page-link" href="#">{{pagina}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="pagina=pagina+1; listaPensamentosPagina(pagina,quantidade)"><span aria-hidden="true">&raquo;</span></a></li>
+      </ul>
+    </nav>
   </div>
 </section>
 <app-footer></app-footer>

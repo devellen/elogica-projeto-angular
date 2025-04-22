@@ -16,18 +16,27 @@ import { RouterLink } from '@angular/router';
 })
 
 export class MuralComponent implements OnInit {
+  pagina: number = 1;
+  quantidade: number = 9;
   quotes: Quote[] = [];
 
   constructor(private muralService: MuralService) {}
   ngOnInit(): void {
-    this.listaPensamentosPagina(1,9)
+    this.listaPensamentosPagina(this.pagina, this.quantidade);
   }
 
   listaPensamentosPagina(pagina: number, quantidade: number) {
     this.muralService.obterPensamentosPorPagina(pagina,quantidade).subscribe(listaPensamentos => {
-      this.quotes = listaPensamentos;
+      if(listaPensamentos.length === 0 && this.pagina !== 1) {
+        this.pagina = this.pagina-1;
+        //next
+      } else {
+        this.quotes = listaPensamentos;
+      }
       console.log(this.quotes)
     })
   }
+
+
 
 }
