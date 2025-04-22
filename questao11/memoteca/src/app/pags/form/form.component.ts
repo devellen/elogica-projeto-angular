@@ -35,7 +35,7 @@ export class FormComponent implements OnInit {
       let pensamentoEditar = history.state;
       delete pensamentoEditar.navigationId;
       this.quoteForm.patchValue(pensamentoEditar);
-      this.quoteForm.get("modelo")?.setValue(pensamentoEditar.modelo.toString());
+      this.quoteForm.get("modelo")?.setValue(pensamentoEditar.modelo ? pensamentoEditar.modelo.toString() : '');
       console.log(this.quoteForm)
     }
   }
