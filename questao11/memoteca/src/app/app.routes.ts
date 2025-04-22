@@ -20,5 +20,9 @@ export const routes: Routes = [
   {
     path: 'formulario/:id',
     component: FormComponent
+  },
+  {
+    path: 'mural/:id',
+    component: MuralComponent
   }
 ];
