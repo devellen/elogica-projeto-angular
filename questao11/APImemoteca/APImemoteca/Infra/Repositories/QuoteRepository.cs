@@ -86,7 +86,7 @@ namespace APImemoteca.Infra.Repositories
         {
             try
             {
-                string sql = $"SELECT * FROM REGISTRO_PENSAMENTO ORDER BY ID OFFSET @OFFSET ROWS FETCH NEXT @FETCHNEXT ROWS ONLY";
+                string sql = $"SELECT * FROM REGISTRO_PENSAMENTO ORDER BY ID DESC OFFSET @OFFSET ROWS FETCH NEXT @FETCHNEXT ROWS ONLY";
                 var parametros = new
                 {
                     OFFSET = (pagina - 1) * quantidade,
